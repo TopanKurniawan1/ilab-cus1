@@ -8,14 +8,36 @@ use App\Http\Controllers\ClassGroupController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\StudentScheduleController;
+use App\Http\Controllers\AuthController;
 
-// Dashboard Admin
-Route::get('/admin', function () {
-    return view('admin.dashboard');
-})->name('admin.dashboard');
 
-// Group Admin Routes
-Route::prefix('admin')->group(function () {
+/*
+|--------------------------------------------------------------------------
+| AUTH
+|--------------------------------------------------------------------------
+*/
+
+Route::get('/login', [AuthController::class, 'loginPage'])->name('login');
+Route::post('/login', [AuthController::class, 'login']);
+
+Route::get('/register', [AuthController::class, 'registerPage']);
+Route::post('/register', [AuthController::class, 'register']);
+
+Route::get('/logout', [AuthController::class, 'logout']);
+
+
+/*
+|--------------------------------------------------------------------------
+| GROUP ADMIN (PROTECTED)
+|--------------------------------------------------------------------------
+*/
+
+Route::middleware('auth.custom')->prefix('admin')->group(function () {
+
+    // Dashboard Admin
+    Route::get('/', function () {
+        return view('admin.dashboard');
+    })->name('admin.dashboard');
 
     // Rooms CRUD
     Route::resource('rooms', RoomController::class);
@@ -29,19 +51,28 @@ Route::prefix('admin')->group(function () {
     // Subjects CRUD
     Route::resource('subjects', SubjectController::class);
 
-    // Schedules CRUD (HANYA HILANGKAN SHOW)
-    Route::resource('schedules', ScheduleController::class)
-         ->except(['show']);
+    // Schedules CRUD (hanya hilangkan SHOW)
+    Route::resource('schedules', ScheduleController::class)->except(['show']);
 });
 
 
-Route::prefix('siswa')->group(function () {
-    Route::get('/rooms', [StudentScheduleController::class, 'rooms'])->name('siswa.rooms');
-    Route::get('/rooms/{room}', [StudentScheduleController::class, 'roomDetail'])->name('siswa.room.detail');
-    Route::get('/rooms/{room}/day/{day}', [StudentScheduleController::class, 'daySchedule'])->name('siswa.room.day');
+/*
+|--------------------------------------------------------------------------
+| GROUP SISWA (PROTECTED)
+|--------------------------------------------------------------------------
+*/
+
+Route::middleware('auth.custom')->prefix('siswa')->group(function () {
+
+    Route::get('/rooms', [StudentScheduleController::class, 'rooms'])
+        ->name('siswa.rooms');
+
+    Route::get('/rooms/{room}', [StudentScheduleController::class, 'roomDetail'])
+        ->name('siswa.room.detail');
+
+    Route::get('/rooms/{room}/day/{day}', [StudentScheduleController::class, 'daySchedule'])
+        ->name('siswa.room.day');
+
+    Route::get('/rooms/{room}/tampil', [StudentScheduleController::class, 'showCurrent'])
+        ->name('siswa.room.current');
 });
-
-
-Route::get('/siswa/rooms/{room}/tampil', [StudentScheduleController::class, 'showCurrent'])
-    ->name('siswa.room.current');
-
