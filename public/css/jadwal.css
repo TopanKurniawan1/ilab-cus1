@@ -1,101 +1,157 @@
+/* ============================
+   GLOBAL STYLE
+============================ */
 body {
-    background: #f3f3f3;
-    font-family: "Times New Roman", serif;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #dfe9ff;
 }
 
 .wrapper {
-    width: 750px;
-    margin: 40px auto;
-    padding: 30px;
-    background: white;
-    border: 3px solid #333;
-}
+    width: 950px;
+    margin: 20px auto;
+    padding: 25px;
+    background: #ffffff;
+    border: 5px solid #6c86b7;
+    border-radius: 8px;
+    position: relative;
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    width: 120px;
-    height: auto;
-}
-
-.title {
-    text-align: center;
-}
-
-.title h2 {
-    margin: 0;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.title h1 {
-    margin: 5px 0 0 0;
-    font-size: 32px;
-    font-weight: bold;
-}
-
-/* CONTENT */
-
-.content {
-    margin-top: 40px;
-    display: flex;
-    justify-content: space-between;
-}
-
-/* PHOTO FRAME */
-
-.photo-frame {
-    width: 260px;
-    border: 2px solid #ccc;
-    border-radius: 10px;
+    /* Background gedung blur seperti mockup */
+    background-image: url('/images/gedung.jpg');
+    background-size: cover;
+    background-position: center;
     overflow: hidden;
 }
 
-.photo-topbar {
-    background: #ffb5d6;
-    padding: 5px;
-    text-align: left;
-    font-size: 12px;
+.wrapper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(3px);
+    z-index: 0;
 }
 
-.photo {
+.wrapper > * {
+    position: relative;
+    z-index: 5;
+}
+
+/* ============================
+   BAGIAN FOTO GURU + NAMA
+============================ */
+.foto-bagian {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Foto persegi membulat */
+.foto-frame {
+    width: 330px;
+    height: 350px;
+    border-radius: 22px;
+    overflow: hidden;
+    border: 4px solid #517dba;
+    box-shadow: 0px 0px 12px rgba(0,0,0,0.35);
+}
+
+.foto {
     width: 100%;
-    height: 280px;
+    height: 100%;
     object-fit: cover;
 }
 
-/* INFO CARDS */
-
-.info {
-    width: 55%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+/* Nama vertikal seperti mockup “Yusuf Effendy” */
+.nama-vertikal {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-size: 38px;
+    font-weight: 700;
+    color: #2956a3;
+    letter-spacing: 4px;
 }
 
-.card {
-    background: #c9c8ff;
+/* ============================
+   MAPEL & KELAS (KOTAK BIRU)
+============================ */
+.info-mapel {
+    margin-top: 25px;
+}
+
+.info-box {
+    background: #c1d7ff;
+    border: 4px solid #7ea4df;
+    border-radius: 18px;
     padding: 18px;
     text-align: center;
-    border-radius: 18px;
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 15px;
-    border: 2px solid #7c7bc1;
+    width: 350px;
+
+    font-size: 22px;
+    font-weight: 700;
+    color: #2c487a;
+
+    box-shadow: 0 0 10px rgba(0,0,0,0.35);
 }
 
-.name {
-    font-size: 26px;
+/* ============================
+   JUDUL “Jadwal Mapel”
+============================ */
+.judul-jadwal {
+    position: absolute;
+    top: 20px;
+    right: 220px;
+
+    font-size: 48px;
+    font-weight: 800;
+    color: #3e5e99;
+
+    text-shadow: 2px 2px #cdd9f8;
 }
 
-.time {
-    font-size: 26px;
+/* Arrow biru (custom seperti mockup) */
+.arrow {
+    position: absolute;
+    top: 90px;
+    right: 300px;
+
+    font-size: 70px;
+    transform: rotate(20deg);
+    color: #5a7ac2;
 }
 
-.subject {
-    font-size: 26px;
+/* ============================
+   KOTAK AWAN UNTUK DAFTAR JADWAL
+============================ */
+.awan-box {
+    position: absolute;
+    top: 140px;
+    right: 40px;
+
+    width: 450px;
+    padding: 25px;
+
+    background: #e6f1ff;
+    border-radius: 50px;
+    border: 4px dashed #8fb6ff;
+
+    box-shadow: 0 0 15px rgba(0,0,0,0.25);
+}
+
+/* List jadwal di dalam awan */
+.item-jadwal {
+    font-size: 22px;
+    font-weight: 700;
+    color: #2d4577;
+    margin-bottom: 8px;
+}
+
+/* ============================
+   RESPONSIVE
+============================ */
+@media(max-width: 960px) {
+    .wrapper {
+        width: 95%;
+    }
 }

@@ -2,6 +2,13 @@
 <html>
 <head>
     <title>Daftar Lab</title>
+    <link rel="stylesheet" href="{{ asset('css/student.css') }}">
+
+<div style="margin-top: 20px;">
+    <a href="/logout">Logout</a>
+</div>
+
+
 </head>
 <body>
 

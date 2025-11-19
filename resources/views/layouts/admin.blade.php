@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>@yield('title')</title>
+
+    <div style="margin-top: 20px;">
+    <a href="/logout">Logout</a>
+    </div>
+
 </head>
 <body>
 
