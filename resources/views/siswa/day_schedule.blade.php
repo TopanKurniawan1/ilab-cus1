@@ -28,9 +28,19 @@
             <tr>
                 <td>{{ $s->lesson_number }}</td>
                 <td>{{ $s->start_time }} - {{ $s->end_time }}</td>
-                <td>{{ $s->classRoom->name }}</td>
-                <td>{{ $s->subject->name }}</td>
-                <td>{{ $s->teacher->name }}</td>
+                <td>{{ $s->classRoom?->name ?? '-' }}</td>
+
+                <td>
+                    @if ($s->lesson_number == 0 || $s->lesson_number == 99)
+                        Istirahat
+                    @else
+                        {{ $s->subject->name }}
+                    @endif
+                </td>
+
+                <td>{{ $s->teacher->name ?? '-' }}</td>
+
+
             </tr>
         @empty
             <tr>

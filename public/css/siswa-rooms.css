@@ -46,19 +46,19 @@
 
 /* Tombol khusus */
 .btn-detail {
-    background: #1976d2;
+    background: #bcdeff;
 }
 
 .btn-detail:hover {
-    background: #0d47a1;
+    background: #99c0fc;
 }
 
 .btn-current {
-    background: #43a047;
+    background: #ffc2c2;
 }
 
 .btn-current:hover {
-    background: #1b5e20;
+    background: #ffabab;
 }
 
 

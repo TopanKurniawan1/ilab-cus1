@@ -36,7 +36,7 @@ public function index()
             'subjects'  => Subject::all(),
             'teachers'  => Teacher::all(),
             'lessons'   => range(1, 10),
-            'days'      => ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],
+            'days'      => ['Monday','Tuesday','Wednesday','Thursday','Friday'],
         ]);
     }
 
@@ -123,7 +123,7 @@ public function index()
             'groups'   => ClassGroup::all(),
             'subjects' => Subject::all(),
             'teachers' => Teacher::all(),
-            'days'     => ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],
+            'days'     => ['Monday','Tuesday','Wednesday','Thursday','Friday'],
             'lessons'  => range(1, 10),
         ]);
     }

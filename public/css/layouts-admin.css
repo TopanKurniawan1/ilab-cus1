@@ -10,7 +10,7 @@ html, body {
     left: 0;
     width: 220px;
     height: 100vh;        /* Tinggi penuh layar */
-    background: #1e293b;
+    background: #ffe8f3;
     padding: 20px;
     color: white;
     box-shadow: 3px 0 10px rgba(0,0,0,0.2);
@@ -42,7 +42,7 @@ html, body {
 .sidebar-menu a {
     display: block;
     padding: 10px 14px;
-    background: #334155;         /* sedikit lebih terang */
+    background: #dbc3e2;         /* sedikit lebih terang */
     color: #fff;
     text-decoration: none;
     border-radius: 6px;
@@ -52,9 +52,40 @@ html, body {
 
 /* Hover */
 .sidebar-menu a:hover {
-    background: #4f6278;
+    background: #c9add8; /* hover ungu lembut */
+    color: #fff;
     transform: translateX(4px);
 }
+
+
+
+
+
+
+.admin-sidebar {
+    color: #2d1b3d;
+}
+
+.sidebar-title {
+    color: #4a235a;
+}
+
+.sidebar-menu a {
+    color: #2d1b3d;
+}
+
+.sidebar-menu a:hover {
+    color: white;
+}
+
+
+
+
+
+
+
+
+
 
 /* Garis bawah */
 .admin-sidebar hr {
@@ -86,8 +117,8 @@ html, body {
 }
 
 .stat-card {
-    background: #1e293b;
-    color: white;
+    background: #ffe8f3;
+    color: rgb(0, 0, 0);
     padding: 18px;
     border-radius: 12px;
     text-align: center;
@@ -103,7 +134,7 @@ html, body {
 .stat-card p {
     margin: 0;
     font-size: 14px;
-    color: #cbd5e1;
+    color: #000000;
 }
 
 .stat-card:hover {
@@ -172,7 +203,7 @@ html, body {
 
 /* Tombol tambah */
 .btn-primary {
-    background: #2563eb;
+    background: #b2caff;
     color: white;
     padding: 10px 16px;
     text-decoration: none;
@@ -197,8 +228,8 @@ html, body {
 }
 
 .table-modern thead {
-    background: #1e293b;
-    color: white;
+    background: #ffe8f3;
+    color: rgb(0, 0, 0);
 }
 
 .table-modern th,
@@ -218,8 +249,10 @@ html, body {
 /* Kolom aksi */
 
 /* Tombol Edit */
+
+
 .btn-edit {
-    background: #3b82f6;
+    background: #acccff;
     color: white;
     padding: 6px 10px;
     border-radius: 6px;
@@ -234,7 +267,7 @@ html, body {
 
 /* Tombol Delete */
 .btn-delete {
-    background: #ef4444;
+    background: #ffc2c2;
     color: white;
     padding: 6px 10px;
     border: none;

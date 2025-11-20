@@ -23,16 +23,23 @@ class StudentScheduleController extends Controller
     }
 
     // Tampilkan jadwal lab berdasarkan hari
-    public function daySchedule(Room $room, $day)
-    {
-        $schedules = Schedule::with(['classRoom','teacher','subject'])
-            ->where('room_id', $room->id)
-            ->where('day', $day)
-            ->orderBy('lesson_number')
-            ->get();
+public function daySchedule(Room $room, $day)
+{
+    $schedules = Schedule::with(['classRoom','teacher','subject'])
+        ->where('room_id', $room->id)
+        ->where('day', $day)
+        ->orderByRaw("
+            CASE
+                WHEN lesson_number = 0 THEN 4   -- Istirahat 1 setelah jam 3
+                WHEN lesson_number = 99 THEN 9  -- Istirahat 2 setelah jam 7
+                ELSE lesson_number
+            END
+        ")
+        ->orderBy('start_time')
+        ->get();
 
-        return view('siswa.day_schedule', compact('room', 'day', 'schedules'));
-    }
+    return view('siswa.day_schedule', compact('room', 'day', 'schedules'));
+}
 
 public function showCurrent(Room $room)
 {
