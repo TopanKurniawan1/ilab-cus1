@@ -2,23 +2,29 @@
 <html>
 <head>
     <title>Detail Lab</title>
-
+    <link rel="stylesheet" href="{{ asset('css/siswa-detail.css') }}">
 </head>
 <body>
 
-<h2>Detail Room: {{ $room->name }}</h2>
+<div class="detail-container">
+    
+<a href="/siswa/rooms" class="back-btn">← Kembali</a>
 
-<p>Kode Lab: {{ $room->code }}</p>
+    <h2 class="title">Detail Room: {{ $room->name }}</h2>
 
-<h3>Pilih Hari:</h3>
+    <p class="lab-code">Kode Lab: <b>{{ $room->code }}</b></p>
 
-@foreach ($days as $day)
-    <div style="margin-bottom:5px;">
-        <a href="{{ route('siswa.room.day', [$room->id, $day]) }}">
-            {{ $day }}
-        </a>
+    <h3 class="subtitle">Pilih Hari:</h3>
+
+    <div class="day-wrapper">
+        @foreach ($days as $day)
+            <a class="day-button" href="{{ route('siswa.room.day', [$room->id, $day]) }}">
+                {{ $day }}
+            </a>
+        @endforeach
     </div>
-@endforeach
+
+</div>
 
 </body>
 </html>

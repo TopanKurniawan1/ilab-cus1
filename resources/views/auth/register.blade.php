@@ -2,28 +2,34 @@
 <html>
 <head>
     <title>Register</title>
+    <link rel="stylesheet" href="{{ asset('css/regis.css') }}">
 </head>
 <body>
 
-<h2>Register</h2>
+<div class="auth-container">
 
-<form method="POST" action="/register">
-    @csrf
+    <h2 class="auth-title">Register Akun</h2>
 
-    <label>Nama:</label><br>
-    <input type="text" name="name"><br><br>
+    <form method="POST" action="/register" class="auth-form">
+        @csrf
 
-    <label>Email:</label><br>
-    <input type="email" name="email"><br><br>
+        <label>Nama</label>
+        <input type="text" name="name" class="input-field" required>
 
-    <label>Password:</label><br>
-    <input type="password" name="password"><br><br>
+        <label>Email</label>
+        <input type="email" name="email" class="input-field" required>
 
-    <button type="submit">Daftar</button>
-</form>
+        <label>Password</label>
+        <input type="password" name="password" class="input-field" required>
 
-<br>
-<a href="/login">Login</a>
+        <button type="submit" class="auth-btn">Daftar</button>
+    </form>
+
+    <p class="auth-link">
+        Sudah punya akun? <a href="/login">Login</a>
+    </p>
+
+</div>
 
 </body>
 </html>

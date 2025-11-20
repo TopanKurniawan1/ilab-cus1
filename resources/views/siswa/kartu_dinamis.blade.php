@@ -14,7 +14,6 @@
             <h2>JADWAL<br>MENGAJAR LAB</h2>
             <h1>{{ $room->name }}</h1>
             <h1>{{ $room->code }}</h1>
-
         </div>
         <img src="{{ asset('img/logo-rpl.png') }}" class="logo">
     </div>
@@ -31,8 +30,11 @@
                 {{ strtoupper($schedule->teacher->name) }}
             </div>
 
+            <!-- WAKTU (format detik dihapus) -->
             <div class="card time">
-                {{ $schedule->start_time }} – {{ $schedule->end_time }}
+                {{ \Carbon\Carbon::parse($schedule->start_time)->format('H:i') }}
+                –
+                {{ \Carbon\Carbon::parse($schedule->end_time)->format('H:i') }}
             </div>
 
             <div class="card subject">
