@@ -4,28 +4,40 @@
 
 @section('content')
 
-<h2>Tambah Subject</h2>
+<div class="form-create">
 
-<form action="{{ route('subjects.store') }}" method="POST">
-    @csrf
+    <h2>Tambah Subject</h2>
 
-    <label>Nama Mapel</label><br>
-    <input type="text" name="name"><br><br>
+    <form action="{{ route('subjects.store') }}" method="POST">
+        @csrf
 
-    <label>Kode (opsional)</label><br>
-    <input type="text" name="code"><br><br>
+        {{-- Nama Mapel --}}
+        <div class="fc-group">
+            <label>Nama Mapel</label>
+            <input type="text" name="name" class="fc-input" required>
+        </div>
 
-    <label>Pilih Guru Pengajar</label><br>
-    <select name="teacher_id">
-        <option value="">-- Pilih Guru --</option>
-        @foreach ($teachers as $t)
-            <option value="{{ $t->id }}">{{ $t->name }}</option>
-        @endforeach
-    </select>
-    <br><br>
+        {{-- Kode Mapel --}}
+        <div class="fc-group">
+            <label>Kode (opsional)</label>
+            <input type="text" name="code" class="fc-input">
+        </div>
 
-    <button type="submit">Simpan</button>
+        {{-- Guru --}}
+        <div class="fc-group">
+            <label>Pilih Guru Pengajar</label>
+            <select name="teacher_id" class="fc-select">
+                <option value="">-- Pilih Guru --</option>
+                @foreach ($teachers as $t)
+                    <option value="{{ $t->id }}">{{ $t->name }}</option>
+                @endforeach
+            </select>
+        </div>
 
-</form>
+        <button type="submit" class="fc-submit">Simpan</button>
+
+    </form>
+
+</div>
 
 @endsection

@@ -4,73 +4,90 @@
 
 @section('content')
 
-<h2>Edit Jadwal</h2>
+<div class="form-edit">
 
-<form action="{{ route('schedules.update', $schedule->id) }}" method="POST">
-    @csrf
-    @method('PUT')
+    <h2>Edit Jadwal Lab</h2>
 
-    <label>Pilih Hari</label><br>
-    <select name="day">
-        @foreach ($days as $d)
-            <option value="{{ $d }}" @if($schedule->day == $d) selected @endif>
-                {{ $d }}
-            </option>
-        @endforeach
-    </select>
-    <br><br>
+    <form action="{{ route('schedules.update', $schedule->id) }}" method="POST">
+        @csrf
+        @method('PUT')
 
-    <label>Pilih Room / Lab</label><br>
-    <select name="room_id">
-        @foreach ($rooms as $r)
-            <option value="{{ $r->id }}" @if($schedule->room_id == $r->id) selected @endif>
-                {{ $r->name }}
-            </option>
-        @endforeach
-    </select>
-    <br><br>
+        <!-- Hari -->
+        <div class="fe-group">
+            <label>Pilih Hari</label>
+            <select name="day" class="fe-select" required>
+                @foreach ($days as $d)
+                    <option value="{{ $d }}" {{ $schedule->day == $d ? 'selected' : '' }}>
+                        {{ $d }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
 
-    <label>Pilih Kelas</label><br>
-    <select name="class_id">
-        @foreach ($groups as $g)
-            <option value="{{ $g->id }}" @if($schedule->class_id == $g->id) selected @endif>
-                {{ $g->name }}
-            </option>
-        @endforeach
-    </select>
-    <br><br>
+        <!-- Room -->
+        <div class="fe-group">
+            <label>Pilih Room / Lab</label>
+            <select name="room_id" class="fe-select" required>
+                @foreach ($rooms as $r)
+                    <option value="{{ $r->id }}" {{ $schedule->room_id == $r->id ? 'selected' : '' }}>
+                        {{ $r->name }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
 
-    <label>Pilih Mata Pelajaran</label><br>
-    <select name="subject_id">
-        @foreach ($subjects as $s)
-            <option value="{{ $s->id }}" @if($schedule->subject_id == $s->id) selected @endif>
-                {{ $s->name }}
-            </option>
-        @endforeach
-    </select>
-    <br><br>
+        <!-- Kelas -->
+        <div class="fe-group">
+            <label>Pilih Kelas</label>
+            <select name="class_id" class="fe-select" required>
+                @foreach ($groups as $g)
+                    <option value="{{ $g->id }}" {{ $schedule->class_id == $g->id ? 'selected' : '' }}>
+                        {{ $g->name }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
 
-    <label>Pilih Guru Pengajar</label><br>
-    <select name="teacher_id">
-        @foreach ($teachers as $t)
-            <option value="{{ $t->id }}" @if($schedule->teacher_id == $t->id) selected @endif>
-                {{ $t->name }}
-            </option>
-        @endforeach
-    </select>
-    <br><br>
+        <!-- Mapel -->
+        <div class="fe-group">
+            <label>Pilih Mata Pelajaran</label>
+            <select name="subject_id" class="fe-select" required>
+                @foreach ($subjects as $s)
+                    <option value="{{ $s->id }}" {{ $schedule->subject_id == $s->id ? 'selected' : '' }}>
+                        {{ $s->name }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
 
-    <label>Jam Pelajaran (1 - 10)</label><br>
-    <select name="lesson_number">
-        @foreach ($lessons as $l)
-            <option value="{{ $l }}" @if($schedule->lesson_number == $l) selected @endif>
-                {{ $l }}
-            </option>
-        @endforeach
-    </select>
-    <br><br>
+        <!-- Guru -->
+        <div class="fe-group">
+            <label>Pilih Guru Pengajar</label>
+            <select name="teacher_id" class="fe-select" required>
+                @foreach ($teachers as $t)
+                    <option value="{{ $t->id }}" {{ $schedule->teacher_id == $t->id ? 'selected' : '' }}>
+                        {{ $t->name }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
 
-    <button type="submit">Update Jadwal</button>
-</form>
+        <!-- Jam Pelajaran -->
+        <div class="fe-group">
+            <label>Jam Pelajaran (1 - 10)</label>
+            <select name="lesson_number" class="fe-select" required>
+                @foreach ($lessons as $l)
+                    <option value="{{ $l }}" {{ $schedule->lesson_number == $l ? 'selected' : '' }}>
+                        {{ $l }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+
+        <button type="submit" class="fe-submit">Update Jadwal</button>
+
+    </form>
+
+</div>
 
 @endsection

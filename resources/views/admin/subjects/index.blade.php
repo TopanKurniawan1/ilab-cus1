@@ -4,38 +4,50 @@
 
 @section('content')
 
-<h2>Subjects (Mata Pelajaran)</h2>
+<h2 class="page-title">Subjects (Mata Pelajaran)</h2>
 
-<a href="{{ route('subjects.create') }}">Tambah Subject</a>
-<br><br>
+<a href="{{ route('subjects.create') }}" class="btn-primary">Tambah Subject</a>
 
-<table border="1" cellpadding="5">
-    <tr>
-        <th>ID</th>
-        <th>Nama Mapel</th>
-        <th>Kode</th>
-        <th>Guru Pengajar</th>
-        <th>Aksi</th>
-    </tr>
+<div class="table-wrapper">
+    <table class="table-modern">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nama Mapel</th>
+                <th>Kode</th>
+                <th>Guru Pengajar</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
 
-    @foreach ($subjects as $s)
-    <tr>
-        <td>{{ $s->id }}</td>
-        <td>{{ $s->name }}</td>
-        <td>{{ $s->code }}</td>
-        <td>{{ $s->teacher ? $s->teacher->name : '-' }}</td>
-        <td>
-            <a href="{{ route('subjects.edit', $s->id) }}">Edit</a>
-            |
-            <form action="{{ route('subjects.destroy', $s->id) }}" method="POST" style="display:inline;">
-                @csrf
-                @method('DELETE')
-                <button type="submit">Hapus</button>
-            </form>
-        </td>
-    </tr>
-    @endforeach
+        <tbody>
+            @foreach ($subjects as $s)
+            <tr>
+                <td>{{ $s->id }}</td>
+                <td>{{ $s->name }}</td>
+                <td>{{ $s->code }}</td>
+                <td>{{ $s->teacher ? $s->teacher->name : '-' }}</td>
 
-</table>
+                <td class="action-col">
+
+                    <a href="{{ route('subjects.edit', $s->id) }}" class="btn-edit">
+                        Edit
+                    </a>
+
+                    <form action="{{ route('subjects.destroy', $s->id) }}"
+                          method="POST"
+                          class="inline-form"
+                          onsubmit="return confirm('Yakin ingin menghapus subject ini?')">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn-delete">Hapus</button>
+                    </form>
+
+                </td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+</div>
 
 @endsection

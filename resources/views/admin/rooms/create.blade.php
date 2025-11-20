@@ -3,17 +3,28 @@
 @section('title', 'Tambah Room')
 
 @section('content')
-<h2>Tambah Room</h2>
 
-<form action="{{ route('rooms.store') }}" method="POST">
-    @csrf
-    <label>Nama Room</label><br>
-    <input type="text" name="name"><br><br>
+<div class="form-create">
 
-    <label>Kode</label><br>
-    <input type="text" name="code"><br><br>
+    <h2>Tambah Room</h2>
 
-    <button type="submit">Simpan</button>
-</form>
+    <form action="{{ route('rooms.store') }}" method="POST">
+        @csrf
+
+        <div class="fc-group">
+            <label>Nama Room</label>
+            <input type="text" name="name" class="fc-input" required>
+        </div>
+
+        <div class="fc-group">
+            <label>Kode Room</label>
+            <input type="text" name="code" class="fc-input" required>
+        </div>
+
+        <button type="submit" class="fc-submit">Simpan</button>
+
+    </form>
+
+</div>
 
 @endsection

@@ -4,21 +4,32 @@
 
 @section('content')
 
-<h2>Tambah Group (Kelas)</h2>
+<div class="form-create">
 
-<form action="{{ route('groups.store') }}" method="POST">
-    @csrf
+    <h2>Tambah Group (Kelas)</h2>
 
-    <label>Nama Kelas</label><br>
-    <input type="text" name="name"><br><br>
+    <form action="{{ route('groups.store') }}" method="POST">
+        @csrf
 
-    <label>Jurusan</label><br>
-    <input type="text" name="major"><br><br>
+        <div class="fc-group">
+            <label>Nama Kelas</label>
+            <input type="text" name="name" class="fc-input" required>
+        </div>
 
-    <label>Tingkat (X / XI / XII)</label><br>
-    <input type="text" name="level"><br><br>
+        <div class="fc-group">
+            <label>Jurusan</label>
+            <input type="text" name="major" class="fc-input" required>
+        </div>
 
-    <button type="submit">Simpan</button>
-</form>
+        <div class="fc-group">
+            <label>Tingkat (X / XI / XII)</label>
+            <input type="text" name="level" class="fc-input" required>
+        </div>
+
+        <button type="submit" class="fc-submit">Simpan</button>
+
+    </form>
+
+</div>
 
 @endsection

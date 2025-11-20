@@ -4,22 +4,33 @@
 
 @section('content')
 
-<h2>Edit Group (Kelas)</h2>
+<div class="form-edit">
 
-<form action="{{ route('groups.update', $group->id) }}" method="POST">
-    @csrf
-    @method('PUT')
+    <h2>Edit Group (Kelas)</h2>
 
-    <label>Nama Kelas</label><br>
-    <input type="text" name="name" value="{{ $group->name }}"><br><br>
+    <form action="{{ route('groups.update', $group->id) }}" method="POST">
+        @csrf
+        @method('PUT')
 
-    <label>Jurusan</label><br>
-    <input type="text" name="major" value="{{ $group->major }}"><br><br>
+        <div class="fe-group">
+            <label>Nama Kelas</label>
+            <input type="text" name="name" class="fe-input" value="{{ $group->name }}" required>
+        </div>
 
-    <label>Tingkat (X / XI / XII)</label><br>
-    <input type="text" name="level" value="{{ $group->level }}"><br><br>
+        <div class="fe-group">
+            <label>Jurusan</label>
+            <input type="text" name="major" class="fe-input" value="{{ $group->major }}" required>
+        </div>
 
-    <button type="submit">Update</button>
-</form>
+        <div class="fe-group">
+            <label>Tingkat (X / XI / XII)</label>
+            <input type="text" name="level" class="fe-input" value="{{ $group->level }}" required>
+        </div>
+
+        <button type="submit" class="fe-submit">Update</button>
+
+    </form>
+
+</div>
 
 @endsection

@@ -4,31 +4,46 @@
 
 @section('content')
 
-<h2>Edit Subject</h2>
+<div class="form-edit">
 
-<form action="{{ route('subjects.update', $subject->id) }}" method="POST">
-    @csrf
-    @method('PUT')
+    <h2>Edit Subject (Mata Pelajaran)</h2>
 
-    <label>Nama Mapel</label><br>
-    <input type="text" name="name" value="{{ $subject->name }}"><br><br>
+    <form action="{{ route('subjects.update', $subject->id) }}" method="POST">
+        @csrf
+        @method('PUT')
 
-    <label>Kode</label><br>
-    <input type="text" name="code" value="{{ $subject->code }}"><br><br>
+        <!-- Nama Mapel -->
+        <div class="fe-group">
+            <label>Nama Mapel</label>
+            <input type="text" name="name" class="fe-input"
+                   value="{{ $subject->name }}" required>
+        </div>
 
-    <label>Pilih Guru Pengajar</label><br>
-    <select name="teacher_id">
-        <option value="">-- Pilih Guru --</option>
-        @foreach ($teachers as $t)
-            <option value="{{ $t->id }}" 
-                @if($subject->teacher_id == $t->id) selected @endif>
-                {{ $t->name }}
-            </option>
-        @endforeach
-    </select>
-    <br><br>
+        <!-- Kode Mapel -->
+        <div class="fe-group">
+            <label>Kode (opsional)</label>
+            <input type="text" name="code" class="fe-input"
+                   value="{{ $subject->code }}">
+        </div>
 
-    <button type="submit">Update</button>
-</form>
+        <!-- Guru Pengajar -->
+        <div class="fe-group">
+            <label>Pilih Guru Pengajar</label>
+            <select name="teacher_id" class="fe-select">
+                <option value="">-- Pilih Guru --</option>
+                @foreach ($teachers as $t)
+                    <option value="{{ $t->id }}" 
+                        {{ $subject->teacher_id == $t->id ? 'selected' : '' }}>
+                        {{ $t->name }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
+
+        <button type="submit" class="fe-submit">Update Subject</button>
+
+    </form>
+
+</div>
 
 @endsection

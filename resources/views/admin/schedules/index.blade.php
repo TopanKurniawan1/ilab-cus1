@@ -4,90 +4,99 @@
 
 @section('content')
 
-<h2>Schedules (Jadwal Lab)</h2>
+<h2 class="page-title">Schedules (Jadwal Lab)</h2>
 
-<a href="{{ route('schedules.create') }}">Buat Jadwal Baru</a>
-<br><br>
+<a href="{{ route('schedules.create') }}" class="btn-primary">Buat Jadwal Baru</a>
 
-<table border="1" cellpadding="5">
-    <tr>
-        <th>Hari</th>
-        <th>Jam</th>
-        <th>Waktu</th>
-        <th>Room</th>
-        <th>Kelas</th>
-        <th>Mapel</th>
-        <th>Guru</th>
-        <th>Aksi</th>
-    </tr>
+<div class="table-wrapper">
+    <table class="table-modern">
+        <thead>
+            <tr>
+                <th>Hari</th>
+                <th>Jam</th>
+                <th>Waktu</th>
+                <th>Room</th>
+                <th>Kelas</th>
+                <th>Mapel</th>
+                <th>Guru</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
 
-    @foreach ($schedules as $s)
-    <tr>
+        <tbody>
+            @foreach ($schedules as $s)
+            <tr>
 
-        {{-- HARI --}}
-        <td>{{ $s->day }}</td>
+                {{-- HARI --}}
+                <td>{{ $s->day }}</td>
 
-        {{-- JAM PELAJARAN / ISTIRAHAT --}}
-        <td>
-            @if ($s->lesson_number == 0)
-                Istirahat 1
-            @elseif ($s->lesson_number == 99)
-                Istirahat 2
-            @else
-                {{ $s->lesson_number }}
-            @endif
-        </td>
+                {{-- JAM --}}
+                <td>
+                    @if ($s->lesson_number == 0)
+                        Istirahat 1
+                    @elseif ($s->lesson_number == 99)
+                        Istirahat 2
+                    @else
+                        {{ $s->lesson_number }}
+                    @endif
+                </td>
 
-        {{-- WAKTU --}}
-        <td>{{ $s->start_time }} - {{ $s->end_time }}</td>
+                {{-- WAKTU --}}
+                <td>{{ $s->start_time }} - {{ $s->end_time }}</td>
 
-        {{-- ROOM --}}
-        <td>{{ $s->room->name }}</td>
+                {{-- ROOM --}}
+                <td>{{ $s->room->name }}</td>
 
-        {{-- KELAS (Khusus istirahat kosongkan) --}}
-        <td>
-            @if ($s->lesson_number == 0 || $s->lesson_number == 99)
-                -
-            @else
-                {{ $s->classRoom->name ?? '-' }}
-            @endif
-        </td>
+                {{-- KELAS --}}
+                <td>
+                    @if ($s->lesson_number == 0 || $s->lesson_number == 99)
+                        -
+                    @else
+                        {{ $s->classRoom->name ?? '-' }}
+                    @endif
+                </td>
 
-        {{-- MAPEL --}}
-        <td>
-            @if ($s->lesson_number == 0 || $s->lesson_number == 99)
-                Istirahat
-            @else
-                {{ $s->subject->name ?? '-' }}
-            @endif
-        </td>
+                {{-- MAPEL --}}
+                <td>
+                    @if ($s->lesson_number == 0 || $s->lesson_number == 99)
+                        Istirahat
+                    @else
+                        {{ $s->subject->name ?? '-' }}
+                    @endif
+                </td>
 
-        {{-- GURU --}}
-        <td>
-            @if ($s->lesson_number == 0 || $s->lesson_number == 99)
-                -
-            @else
-                {{ $s->teacher->name ?? '-' }}
-            @endif
-        </td>
+                {{-- GURU --}}
+                <td>
+                    @if ($s->lesson_number == 0 || $s->lesson_number == 99)
+                        -
+                    @else
+                        {{ $s->teacher->name ?? '-' }}
+                    @endif
+                </td>
 
-        {{-- AKSI --}}
-        <td>
-            {{-- Tombol edit tidak boleh muncul untuk istirahat --}}
-            @if (!($s->lesson_number == 0 || $s->lesson_number == 99))
-                <a href="{{ route('schedules.edit', $s->id) }}">Edit</a>
-                |
-            @endif
+                {{-- AKSI --}}
+                <td class="action-col">
 
-            <form action="{{ route('schedules.destroy', $s->id) }}" method="POST" style="display:inline;">
-                @csrf
-                @method('DELETE')
-                <button type="submit">Hapus</button>
-            </form>
-        </td>
+                    {{-- Edit tidak muncul saat ISTIRAHAT --}}
+                    @if (!($s->lesson_number == 0 || $s->lesson_number == 99))
+                        <a href="{{ route('schedules.edit', $s->id) }}" class="btn-edit">Edit</a>
+                    @endif
 
-    </tr>
-    @endforeach
-</table>
+                    <form action="{{ route('schedules.destroy', $s->id) }}" 
+                          method="POST"
+                          class="inline-form"
+                          onsubmit="return confirm('Yakin ingin menghapus jadwal ini?')">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn-delete">Hapus</button>
+                    </form>
+
+                </td>
+
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+</div>
 
 @endsection

@@ -4,61 +4,78 @@
 
 @section('content')
 
-<h2>Tambah Jadwal Lab</h2>
+<div class="form-create">
 
-<form action="{{ route('schedules.store') }}" method="POST">
-    @csrf
+    <h2>Tambah Jadwal Lab</h2>
 
-    <label>Pilih Hari</label><br>
-    <select name="day">
-        <option value="">-- Pilih Hari --</option>
-        @foreach ($days as $d)
-            <option value="{{ $d }}">{{ $d }}</option>
-        @endforeach
-    </select>
-    <br><br>
+    <form action="{{ route('schedules.store') }}" method="POST">
+        @csrf
 
-    <label>Pilih Room / Lab</label><br>
-    <select name="room_id">
-        @foreach ($rooms as $r)
-            <option value="{{ $r->id }}">{{ $r->name }}</option>
-        @endforeach
-    </select>
-    <br><br>
+        {{-- Hari --}}
+        <div class="fc-group">
+            <label>Pilih Hari</label>
+            <select name="day" class="fc-select" required>
+                <option value="">-- Pilih Hari --</option>
+                @foreach ($days as $d)
+                    <option value="{{ $d }}">{{ $d }}</option>
+                @endforeach
+            </select>
+        </div>
 
-    <label>Pilih Kelas</label><br>
-    <select name="class_id">
-        @foreach ($groups as $g)
-            <option value="{{ $g->id }}">{{ $g->name }}</option>
-        @endforeach
-    </select>
-    <br><br>
+        {{-- Room --}}
+        <div class="fc-group">
+            <label>Pilih Room / Lab</label>
+            <select name="room_id" class="fc-select" required>
+                @foreach ($rooms as $r)
+                    <option value="{{ $r->id }}">{{ $r->name }}</option>
+                @endforeach
+            </select>
+        </div>
 
-    <label>Pilih Mata Pelajaran</label><br>
-    <select name="subject_id">
-        @foreach ($subjects as $s)
-            <option value="{{ $s->id }}">{{ $s->name }}</option>
-        @endforeach
-    </select>
-    <br><br>
+        {{-- Kelas --}}
+        <div class="fc-group">
+            <label>Pilih Kelas</label>
+            <select name="class_id" class="fc-select" required>
+                @foreach ($groups as $g)
+                    <option value="{{ $g->id }}">{{ $g->name }}</option>
+                @endforeach
+            </select>
+        </div>
 
-    <label>Pilih Guru Pengajar</label><br>
-    <select name="teacher_id">
-        @foreach ($teachers as $t)
-            <option value="{{ $t->id }}">{{ $t->name }}</option>
-        @endforeach
-    </select>
-    <br><br>
+        {{-- Mapel --}}
+        <div class="fc-group">
+            <label>Pilih Mata Pelajaran</label>
+            <select name="subject_id" class="fc-select" required>
+                @foreach ($subjects as $s)
+                    <option value="{{ $s->id }}">{{ $s->name }}</option>
+                @endforeach
+            </select>
+        </div>
 
-    <label>Jam Pelajaran (1 - 10)</label><br>
-    <select name="lesson_number">
-        @foreach ($lessons as $l)
-            <option value="{{ $l }}">{{ $l }}</option>
-        @endforeach
-    </select>
-    <br><br>
+        {{-- Guru --}}
+        <div class="fc-group">
+            <label>Pilih Guru Pengajar</label>
+            <select name="teacher_id" class="fc-select" required>
+                @foreach ($teachers as $t)
+                    <option value="{{ $t->id }}">{{ $t->name }}</option>
+                @endforeach
+            </select>
+        </div>
 
-    <button type="submit">Simpan Jadwal</button>
-</form>
+        {{-- Jam --}}
+        <div class="fc-group">
+            <label>Jam Pelajaran (1 - 10)</label>
+            <select name="lesson_number" class="fc-select" required>
+                @foreach ($lessons as $l)
+                    <option value="{{ $l }}">{{ $l }}</option>
+                @endforeach
+            </select>
+        </div>
+
+        <button type="submit" class="fc-submit">Simpan Jadwal</button>
+
+    </form>
+
+</div>
 
 @endsection

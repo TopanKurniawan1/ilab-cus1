@@ -3,24 +3,42 @@
 @section('title', 'Tambah Guru')
 
 @section('content')
-<h2>Tambah Guru</h2>
 
-<form action="{{ route('teachers.store') }}" method="POST" enctype="multipart/form-data">
-    @csrf
+<div class="form-create">
 
-    <label>Nama Guru</label><br>
-    <input type="text" name="name"><br><br>
+    <h2>Tambah Guru</h2>
 
-    <label>Email</label><br>
-    <input type="text" name="email"><br><br>
+    <form action="{{ route('teachers.store') }}" method="POST" enctype="multipart/form-data">
+        @csrf
 
-    <label>Telepon</label><br>
-    <input type="text" name="phone"><br><br>
+        {{-- Nama Guru --}}
+        <div class="fc-group">
+            <label>Nama Guru</label>
+            <input type="text" name="name" class="fc-input" required>
+        </div>
 
-    <label>Foto</label><br>
-    <input type="file" name="photo"><br><br>
+        {{-- Email --}}
+        <div class="fc-group">
+            <label>Email</label>
+            <input type="email" name="email" class="fc-input" required>
+        </div>
 
-    <button type="submit">Simpan</button>
-</form>
+        {{-- Telepon --}}
+        <div class="fc-group">
+            <label>Telepon</label>
+            <input type="text" name="phone" class="fc-input">
+        </div>
+
+        {{-- Foto --}}
+        <div class="fc-group">
+            <label>Foto Guru</label>
+            <input type="file" name="photo" class="fc-input" accept="image/*">
+        </div>
+
+        <button type="submit" class="fc-submit">Simpan</button>
+
+    </form>
+
+</div>
 
 @endsection

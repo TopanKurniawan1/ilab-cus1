@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>@yield('title')</title>
-    <link rel="stylesheet" href="{{ asset('css/layouts-admin.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/layouts-admin.css') }}?v={{ time() }}">
 
 </head>
 <body>
@@ -30,7 +30,7 @@
     <hr>
 </div>
 
-<div id="content" style="margin-left:220px; padding:10px;">
+<div id="content" style="margin-left:240px; padding:20px;">
     @yield('content')
 </div>
 
