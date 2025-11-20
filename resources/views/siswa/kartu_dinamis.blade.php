@@ -9,12 +9,14 @@
 <div class="wrapper">
 
     <div class="header">
-        <img src="{{ asset('img/logo1.png') }}" class="logo">
+        <img src="{{ asset('img/logo-neskar.png') }}" class="logo">
         <div class="title">
             <h2>JADWAL<br>MENGAJAR LAB</h2>
             <h1>{{ $room->name }}</h1>
+            <h1>{{ $room->code }}</h1>
+
         </div>
-        <img src="{{ asset('img/logo2.png') }}" class="logo">
+        <img src="{{ asset('img/logo-rpl.png') }}" class="logo">
     </div>
 
     <div class="content">

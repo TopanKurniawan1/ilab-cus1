@@ -4,38 +4,47 @@
 
 @section('content')
 
-<h2>Groups (Kelas)</h2>
+<h2 class="page-title">Groups (Kelas)</h2>
 
-<a href="{{ route('groups.create') }}">Tambah Group</a>
+<a href="{{ route('groups.create') }}" class="btn-primary">Tambah Group</a>
+
 <br><br>
 
-<table border="1" cellpadding="5">
-    <tr>
-        <th>ID</th>
-        <th>Nama Kelas</th>
-        <th>Jurusan</th>
-        <th>Tingkat</th>
-        <th>Aksi</th>
-    </tr>
+<table class="table-modern">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nama Kelas</th>
+            <th>Jurusan</th>
+            <th>Tingkat</th>
+            <th>Aksi</th>
+        </tr>
+    </thead>
 
-    @foreach ($groups as $g)
-    <tr>
-        <td>{{ $g->id }}</td>
-        <td>{{ $g->name }}</td>
-        <td>{{ $g->major }}</td>
-        <td>{{ $g->level }}</td>
-        <td>
-            <a href="{{ route('groups.edit', $g->id) }}">Edit</a>
-            |
-            <form action="{{ route('groups.destroy', $g->id) }}" method="POST" style="display:inline;">
-                @csrf
-                @method('DELETE')
-                <button type="submit">Hapus</button>
-            </form>
-        </td>
-    </tr>
-    @endforeach
+    <tbody>
+        @foreach ($groups as $g)
+        <tr>
+            <td>{{ $g->id }}</td>
+            <td>{{ $g->name }}</td>
+            <td>{{ $g->major }}</td>
+            <td>{{ $g->level }}</td>
+            <td class="action-col">
 
+                <a href="{{ route('groups.edit', $g->id) }}" class="btn-edit">Edit</a>
+
+                <form action="{{ route('groups.destroy', $g->id) }}" 
+                      method="POST" 
+                      class="inline-form"
+                      onsubmit="return confirm('Yakin ingin menghapus?')">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn-delete">Hapus</button>
+                </form>
+
+            </td>
+        </tr>
+        @endforeach
+    </tbody>
 </table>
 
 @endsection

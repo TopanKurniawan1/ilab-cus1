@@ -2,21 +2,29 @@
 <html>
 <head>
     <title>Daftar Lab</title>
+
+    <link rel="stylesheet" href="{{ asset('css/student.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/siswa-rooms.css') }}">
 </head>
 <body>
 
+<div class="logout-container">
+    <a href="/logout" class="logout-btn">Logout</a>
+</div>
+
 <h2>Daftar Laboratorium</h2>
 
+<div class="room-grid">
 @foreach ($rooms as $room)
-<div style="border:1px solid black; padding:10px; margin-bottom:10px;">
-    <h3>{{ $room->name }}</h3>
-    <p>Kode: {{ $room->code }}</p>
+    <div class="room-card">
+        <h3>{{ $room->name }}</h3>
+        <p class="room-code">Kode: {{ $room->code }}</p>
 
-        <a href="{{ route('siswa.room.detail', $room->id) }}">Detail</a>
-        <br>
-        <a href="{{ route('siswa.room.current', $room->id) }}">Tampil Sekarang</a>
-</div>
+        <a href="{{ route('siswa.room.detail', $room->id) }}" class="btn-detail">Detail</a>
+        <a href="{{ route('siswa.room.current', $room->id) }}" class="btn-current">Tampil Sekarang</a>
+    </div>
 @endforeach
+</div>
 
 </body>
 </html>

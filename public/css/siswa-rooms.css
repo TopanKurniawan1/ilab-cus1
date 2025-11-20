@@ -1,0 +1,90 @@
+/* Grid container untuk semua card */
+.room-grid {
+    display: flex;
+    flex-wrap: wrap;       /* otomatis turun ke bawah kalau penuh */
+    gap: 20px;             /* jarak antar card */
+    padding: 10px;
+}
+
+/* Card */
+.room-card {
+    width: 260px;          /* ukuran card kecil */
+    background: #ffffff;
+    padding: 18px;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: 0.25s ease;
+}
+
+/* Efek hover */
+.room-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Kode ruangan */
+.room-code {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+/* Tombol */
+.btn-detail,
+.btn-current {
+    display: block;
+    text-align: center;
+    padding: 9px 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    transition: 0.2s ease;
+}
+
+/* Tombol khusus */
+.btn-detail {
+    background: #1976d2;
+}
+
+.btn-detail:hover {
+    background: #0d47a1;
+}
+
+.btn-current {
+    background: #43a047;
+}
+
+.btn-current:hover {
+    background: #1b5e20;
+}
+
+
+/* Container agar tombol di kanan atas */
+.logout-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;   /* pindah ke kanan */
+    margin-top: 20px;
+    padding-right: 20px;
+}
+
+/* Tombol logout */
+.logout-btn {
+    background: #01acfc;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.2s;
+    display: inline-block;
+}
+
+/* Hover */
+.logout-btn:hover {
+    background: #1c00b9;
+}

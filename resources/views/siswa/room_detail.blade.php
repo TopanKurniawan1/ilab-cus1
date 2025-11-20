@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Detail Lab</title>
+
 </head>
 <body>
 
