@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .big-card {
     width: 100vw;
     height: 100vh;
@@ -88,3 +89,95 @@
     text-align: center;
     margin-top: 10px;
 }
+=======
+.big-card {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 20px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+
+    display: flex;                  /* agar bisa terbagi kiri-kanan */
+    overflow: hidden;               /* supaya tidak bocor keluar radius */
+}
+
+/* Bagian kiri card */
+.big-card-left {
+    flex: 1;                         /* 50% area */
+    background-color: #ffffff;       /* putih */
+}
+
+/* Bagian kanan card */
+.big-card-right {
+    flex: 1;                         /* 50% area */
+    background-color: #cfe4ff;       /* biru muda lembut */
+}
+
+/* Ukuran logo */
+.logo-small {
+    width: 60px;          /* ukuran diperkecil */
+    height: auto;
+}
+
+.teks-1 {
+    text-align: center;
+
+}
+
+.foto-guru {
+    width: 500px;         /* ukuran ideal, bisa diganti 150–300px */
+    height: 350px;         /* menjaga proporsi asli */
+    border-radius: 15px;  /* membuat sudut lembut, opsional */
+    object-fit: cover;    /* memastikan tidak melar */
+    margin-top: 20px;     /* jarak dari teks */
+    margin-bottom: 20px;   /* inilah jarak antara foto dan teks */
+
+}
+
+.smkn-1 {
+    margin-bottom: 20px;
+}
+
+.jadwal-1{
+    text-align: center;
+}
+
+/* Card kecil memanjang */
+.jadwal-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 15px 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    width: 100%;               /* mengikuti lebar area kanan */
+}
+
+
+.jadwal-card-now {
+    background-color: #82cce2;
+    border-radius: 12px;
+    padding: 15px 20px;
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.12);
+    width: 100%;               /* mengikuti lebar area kanan */
+}
+
+
+/* Style teks di dalam card */
+.isi-jadwal {
+    color: #000;
+    font-size: 1.2rem;         /* teks lebih besar */
+    font-weight: 500;
+}
+
+/* Agar list rapi */
+.list-jadwal {
+    margin-top: 20px;
+}
+
+
+.jam-realtime {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #000;
+    text-align: center;
+    margin-top: 10px;
+}
+>>>>>>> f86f51fa47c29e6b638129a3cc667243284496a2
