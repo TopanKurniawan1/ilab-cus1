@@ -45,8 +45,11 @@ public function showCurrent(Room $room)
 {
     date_default_timezone_set('Asia/Jakarta');
 
-    $now = date('H:i');      // contoh: 08:55
-    $day = date('l');        // contoh: Monday
+    // Ambil jam sekarang
+    $now = date('H:i');      
+
+    // Ambil hari (English sesuai database)
+    $day = date('l');
 
     // Waktu istirahat
     $breaks = [
@@ -54,14 +57,16 @@ public function showCurrent(Room $room)
         ['12:15', '13:00'],
     ];
 
-    // Cek apakah sekarang istirahat
+    // Jika sedang istirahat → tampilkan kartu istirahat
     foreach ($breaks as $b) {
         if ($now >= $b[0] && $now < $b[1]) {
             return view('siswa.kartu_istirahat', compact('room'));
         }
     }
 
-    // Ambil jadwal sesuai jam sekarang
+    // ================================
+    // 1) Ambil JADWAL SEKARANG
+    // ================================
     $schedule = Schedule::with(['teacher','subject','classRoom'])
         ->where('room_id', $room->id)
         ->where('day', $day)
@@ -69,11 +74,38 @@ public function showCurrent(Room $room)
         ->where('end_time', '>', $now)
         ->first();
 
+    // Jika tidak ada jadwal sekarang → tampilkan kartu kosong
     if (!$schedule) {
         return view('siswa.kartu_kosong', compact('room'));
     }
 
-    return view('siswa.kartu_dinamis', compact('room', 'schedule'));
+    // ================================
+    // 2) Ambil JADWAL SEBELUMNYA (prev)
+    // ================================
+    $prevSchedule = Schedule::with(['subject'])
+        ->where('room_id', $room->id)
+        ->where('day', $day)
+        ->where('end_time', '<=', $schedule->start_time)
+        ->orderBy('end_time', 'desc')
+        ->first();
+
+    // ================================
+    // 3) Ambil JADWAL SELANJUTNYA (next)
+    // ================================
+    $nextSchedule = Schedule::with(['subject'])
+        ->where('room_id', $room->id)
+        ->where('day', $day)
+        ->where('start_time', '>=', $schedule->end_time)
+        ->orderBy('start_time', 'asc')
+        ->first();
+
+    // Kirim semua data ke view
+    return view('siswa.kartu_dinamis', [
+        'room' => $room,
+        'schedule' => $schedule,
+        'prevSchedule' => $prevSchedule,
+        'nextSchedule' => $nextSchedule,
+    ]);
 }
 
 
