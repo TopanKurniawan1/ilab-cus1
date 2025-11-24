@@ -1,0 +1,80 @@
+/* Reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+}
+
+/* Container */
+.detail-container {
+    max-width: 700px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* Judul */
+.title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.lab-code {
+    font-size: 16px;
+    color: #475569;
+    margin-bottom: 25px;
+}
+
+/* Subtitle */
+.subtitle {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 15px;
+}
+
+/* List hari */
+.day-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.day-button {
+    background: #2563eb;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s ease;
+    display: block;
+}
+
+.day-button:hover {
+    background: #1e3a8a;
+    transform: translateX(5px);
+}
+
+
+/* Back button */
+.back-btn {
+    display: inline-block;
+    margin: 20px;
+    padding: 10px 16px;
+    background: #64748b;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.25s ease;
+}
+
+.back-btn:hover {
+    background: #475569;
+    transform: translateX(-5px);
+}
