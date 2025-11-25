@@ -1,0 +1,94 @@
+/* ============================================
+   PAGE BASE
+   ============================================ */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: #e9f2ff; /* biru muda elegan */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+/* ============================================
+   CARD ISTIRAHAT
+   ============================================ */
+.break-card {
+    width: 95%;
+    max-width: 1600px;
+    min-height: 88vh;
+    background: #bcd9ff; /* biru muda */
+    border-radius: 35px;
+    padding: 50px;
+    position: relative;
+    box-shadow: 0 25px 70px rgba(0,0,0,0.25);
+}
+
+/* ============================================
+   LOGO KIRI ATAS
+   ============================================ */
+.logo-wrapper {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    display: flex;
+    gap: 15px;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
+/* ============================================
+   TULISAN ISTIRAHAT TENGAH
+   ============================================ */
+.break-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.break-title {
+    font-size: 100px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: #0b2a55;
+    margin: 0;
+}
+
+.lab-name {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1a365f;
+    margin-top: 15px;
+}
+
+.break-time {
+    font-size: 28px;
+    font-weight: 500;
+    margin-top: 20px;
+    color: #0b2a55;
+}
+
+.break-subtitle {
+    font-size: 22px;
+    margin-top: 10px;
+    color: #1f3d67;
+}
+
+/* ANIMASI */
+.break-title {
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0%   { transform: translateY(-5px); }
+    50%  { transform: translateY(5px); }
+    100% { transform: translateY(-5px); }
+}

@@ -1,30 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>Istirahat</title>
-    <link rel="stylesheet" href="{{ asset('css/jadwal.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kartu Istirahat</title>
+
+    <link rel="stylesheet" href="{{ asset('css/bigcard-istirahat.css') }}">
 </head>
+
 <body>
 
-<div class="wrapper">
+<div class="break-card">
 
-    <div class="header">
+    <!-- LOGO KIRI ATAS -->
+    <div class="logo-wrapper">
         <img src="{{ asset('img/logo-neskar.png') }}" class="logo">
-        <div class="title">
-            <h2>JADWAL LAB</h2>
-            <h1>{{ $room->name }}</h1>
-        </div>
         <img src="{{ asset('img/logo-rpl.png') }}" class="logo">
     </div>
 
-    <div class="content">
+    <!-- TULISAN UTAMA -->
+    <div class="break-content">
+        <h1 class="break-title">ISTIRAHAT</h1>
+        <h2 class="lab-name">{{ strtoupper($room->name) }}</h2>
 
-        <div class="info" style="width:100%;text-align:center;">
-            <div class="card subject" style="font-size:32px;">
-                SEDANG ISTIRAHAT
-            </div>
-        </div>
+        <p class="break-time">
+            {{ $now ?? '' }}
+        </p>
 
+        <p class="break-subtitle">Silakan beristirahat sejenak.</p>
     </div>
 
 </div>

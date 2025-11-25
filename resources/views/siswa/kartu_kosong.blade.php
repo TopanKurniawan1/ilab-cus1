@@ -1,30 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>Tidak Ada Jadwal</title>
-    <link rel="stylesheet" href="{{ asset('css/jadwal.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadwal Kosong</title>
+
+    <link rel="stylesheet" href="{{ asset('css/bigcard-kosong.css') }}">
 </head>
+
 <body>
 
-<div class="wrapper">
+<div class="empty-card">
 
-    <div class="header">
-        <img src="{{ asset('img/logo-neskar.png') }}" class="logo">
-        <div class="title">
-            <h2>JADWAL LAB</h2>
-            <h1>{{ $room->name }}</h1>
-        </div>
-        <img src="{{ asset('img/logo-rpl.png') }}" class="logo">
+    <!-- LOGO POJOK KIRI ATAS -->
+    <div class="logo-wrapper">
+        <img src="{{ asset('img/logo1.png') }}" class="logo">
+        <img src="{{ asset('img/logo2.png') }}" class="logo">
     </div>
 
-    <div class="content">
+    <!-- KONTEN TENGAH -->
+    <div class="empty-content">
+        <h1 class="empty-title">TIDAK ADA JADWAL</h1>
+        <h2 class="sub-title">WAKTU PULANG</h2>
 
-        <div class="info" style="width:100%;text-align:center;">
-            <div class="card subject" style="font-size:32px;">
-                TIDAK ADA JADWAL SAAT INI
-            </div>
-        </div>
+        <p class="lab-name">{{ strtoupper($room->name) }}</p>
 
+        <p class="info-text">Semua pelajaran hari ini telah selesai.</p>
+        <p class="info-text-small">Sampai jumpa besok!</p>
     </div>
 
 </div>

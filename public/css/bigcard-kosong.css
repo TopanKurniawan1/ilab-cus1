@@ -1,0 +1,104 @@
+/* ================================
+   PAGE GLOBAL
+   ================================ */
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: #e9f2ff;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+/* ================================
+   CARD KOSONG / PULANG
+   ================================ */
+
+.empty-card {
+    width: 95%;
+    max-width: 1600px;
+    min-height: 88vh;
+    background: #bcd9ff;
+    border-radius: 35px;
+    padding: 50px;
+    position: relative;
+    box-shadow: 0 25px 70px rgba(0,0,0,0.25);
+}
+
+/* ================================
+   LOGO KIRI ATAS
+   ================================ */
+
+.logo-wrapper {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    display: flex;
+    gap: 15px;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+
+/* ================================
+   TULISAN DI TENGAH (EMPTY STATE)
+   ================================ */
+
+.empty-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.empty-title {
+    font-size: 80px;
+    font-weight: 900;
+    color: #0b2a55;
+    margin: 0;
+    letter-spacing: 3px;
+}
+
+.sub-title {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1a365f;
+    margin-top: 10px;
+}
+
+.lab-name {
+    font-size: 28px;
+    font-weight: 600;
+    margin-top: 25px;
+    color: #0b2a55;
+}
+
+.info-text {
+    font-size: 22px;
+    margin-top: 20px;
+    color: #1f3d67;
+}
+
+.info-text-small {
+    font-size: 20px;
+    margin-top: 5px;
+    color: #30507a;
+}
+
+/* Animasi halus */
+.empty-title {
+    animation: floating 2s infinite ease-in-out;
+}
+
+@keyframes floating {
+    0%   { transform: translate(-50%, -52%); }
+    50%  { transform: translate(-50%, -48%); }
+    100% { transform: translate(-50%, -52%); }
+}
