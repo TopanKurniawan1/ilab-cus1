@@ -1,0 +1,203 @@
+/* ===========================
+   RESET & PAGE BASE
+   =========================== */
+body {
+    margin: 0;
+    padding: 30px 0;
+
+    /* Gold tint super halus */
+    background: linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #fff8e7 4%,      /* emas sangat lembut */
+        #ffffff 15%
+    );
+
+    font-family: "Poppins", Arial, sans-serif;
+    display: block;         /* Hapus Flex */
+    text-align: center;     /* Untuk center foto guru */
+}
+
+
+/* ===========================
+   CARD BESAR DI ATAS
+   =========================== */
+.top-card {
+    width: 95%;
+    background: #ffffff;
+    border-radius: 25px;
+    padding: 10px 30px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* ===========================
+   BAGIAN KIRI — LOGO
+   =========================== */
+.left-logos {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.left-logos .logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+/* ===========================
+   BAGIAN KANAN — TEKS
+   =========================== */
+.right-content {
+    text-align: right;
+}
+
+.title {
+    margin: 0;
+    font-size: 38px;
+    font-weight: 800;
+    color: #6b6658; /* abu emas elegan */
+}
+
+.subtitle {
+    margin: 5px 0 0;
+    font-size: 18px;
+    color: #8a836f; /* abu emas lembut */
+}
+
+/* ============================================
+   FOTO GURU DI BAWAH CARD (BULAT ELEGAN)
+   ============================================ */
+
+.teacher-photo-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.teacher-photo-circle {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+
+    /* Border emas yang elegan, sangat halus */
+    border: 5px solid #d6c69a88;  /* emas pastel 40% opacity */
+
+    /* Shadow premium */
+    box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+
+    background-color: #fff;
+}
+
+.teacher-photo-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.teacher-name {
+    margin-top: 12px;
+    font-size: 22px;
+    font-weight: 700;
+
+    /* Warna abu emas elegan */
+    color: #6b6658; /* gold-grey utama */
+
+    letter-spacing: 0.5px;
+}
+
+
+/* ============================================
+   CARD JADWAL DI BAWAH FOTO GURU
+   ============================================ */
+
+.schedule-list {
+    margin-top: 25px;
+    width: 360px;                    /* proporsional & elegan */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* CARD DEFAULT */
+.schedule-card {
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 18px;
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    border-left: 5px solid #d6c69a;   /* garis emas lembut */
+    backdrop-filter: blur(5px);
+}
+
+.schedule-card .time {
+    font-size: 18px;
+    font-weight: 700;
+    color: #6b6658;                  /* abu emas */
+    letter-spacing: 0.5px;
+}
+
+.schedule-card .subject {
+    font-size: 16px;
+    margin-top: 4px;
+    color: #8a836f;                  /* abu emas lembut */
+}
+
+/* CARD SEKARANG — highlight elegan */
+.schedule-card.now {
+    background: #d6c69a33;           /* gold pastel transparan */
+    border-left-color: #c1b284;      /* emas sedikit lebih tegas */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+}
+
+.schedule-card.now .time,
+.schedule-card.now .subject {
+    color: #5a5447;                  /* warna lebih kuat */
+}
+
+/* CARD SEBELUMNYA & SELANJUTNYA */
+.schedule-card.prev,
+.schedule-card.next {
+    opacity: 0.90;
+}
+
+/* SMOOTH ANIMATION */
+.schedule-card {
+    transition: 0.25s ease;
+}
+
+.schedule-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.20);
+}
+
+
+/* ============================================
+   INFO LAB DAN KELAS (DI TENGAH BAWAH CARD)
+   ============================================ */
+
+.lab-class-info {
+    margin-top: 25px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.lab-name {
+    font-size: 32px;
+    font-weight: 800;
+    color: #6b6658; /* abu emas elegan */
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.class-name {
+    font-size: 24px;
+    font-weight: 600;
+    color: #8a836f; /* abu emas lembut */
+    margin: 5px 0 0;
+}
