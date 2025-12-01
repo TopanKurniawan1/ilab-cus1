@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+    padding: 30px;
+    background: #f6f6f6;
+    font-family: "Poppins", sans-serif;
+}
+
+/* ============================
+   CARD BESAR
+   ============================ */
+.main-card {
+    width: 95%;
+    margin: auto;
+    background: #ffffff;
+    border: 5px solid #c5a442;
+    border-radius: 14px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* ============================
+   HEADER
+   ============================ */
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+}
+
+.header-text {
+    text-align: center;
+}
+
+.header-text h1 {
+    margin: 0;
+    font-size: 36px;
+    font-weight: 900;
+    color: #c5a442; /* emas */
+    letter-spacing: 2px;
+}
+
+.header-text h2 {
+    margin-top: 5px;
+    font-size: 28px;
+    font-weight: 800;
+    color: #c5a442;
+}
+
+/* ============================
+   CONTENT ROW
+   ============================ */
+.content-row {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+
+/* FOTO GURU */
+.teacher-photo {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    border: 6px solid #c5a442;
+    object-fit: cover;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* ============================
+   INFO CARDS
+   ============================ */
+.info-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 380px;
+}
+
+.info-card {
+    background: #ffffff;
+    border: 4px solid #c5a442;
+    padding: 18px 10px;
+    border-radius: 16px;
+    text-align: center;
+    font-size: 26px;
+    font-weight: 800;
+    color: #c5a442;
+    letter-spacing: 1.5px;
+    box-shadow: 0 5px 16px rgba(0,0,0,0.12);
+}
+
+
+/* ======================================
+   ISTIRAHAT & KOSONG — BOX TENGAH
+   ====================================== */
+
+.empty-box {
+    margin: 50px auto 0;
+    width: 70%;
+    max-width: 650px;
+    padding: 28px 30px;
+    background: #ffffff;
+    border: 4px solid #c5a442;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.empty-title {
+    font-size: 34px;
+    font-weight: 900;
+    color: #c5a442;
+    letter-spacing: 2px;
+}
+
+.empty-sub {
+    margin-top: 5px;
+    font-size: 20px;
+    color: #c5a442;
+}
+
+.empty-time {
+    margin-top: 12px;
+    font-size: 26px;
+    font-weight: 800;
+    color: #c5a442;
+}
