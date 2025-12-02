@@ -1,0 +1,88 @@
+/* Background */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+}
+
+/* Form container */
+.auth-container {
+    width: 360px;
+    margin: 70px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+    text-align: center;
+}
+
+/* Title */
+.auth-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #1e293b;
+}
+
+/* Label */
+.auth-form label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #334155;
+}
+
+/* Input */
+.input-field {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 18px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    transition: 0.25s;
+    font-size: 14px;
+}
+
+.input-field:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.2);
+    outline: none;
+}
+
+/* Button */
+.auth-btn {
+    width: 100%;
+    padding: 12px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.auth-btn:hover {
+    background: #1e3a8a;
+    transform: translateY(-2px);
+}
+
+/* Link bawah */
+.auth-link {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #475569;
+}
+
+.auth-link a {
+    color: #2563eb;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.auth-link a:hover {
+    text-decoration: underline;
+}
