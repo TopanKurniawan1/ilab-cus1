@@ -1,0 +1,88 @@
+/* Reset dasar */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+}
+
+/* Container utama */
+.container {
+    max-width: 850px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* Judul */
+.title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 18px;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 20px;
+}
+
+/* Tabel jadwal */
+.table-modern {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.table-modern thead {
+    background: #1e293b;
+    color: white;
+}
+
+.table-modern th,
+.table-modern td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.table-modern tbody tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+.table-modern tbody tr:hover {
+    background: #e2e8f0;
+}
+
+/* Text center untuk pesan kosong */
+.empty-row {
+    text-align: center;
+    font-weight: 600;
+    color: #64748b;
+    padding: 20px;
+}
+
+/* Back button */
+.back-btn {
+    display: inline-block;
+    margin: 20px;
+    padding: 10px 16px;
+    background: #64748b;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.25s ease;
+}
+
+.back-btn:hover {
+    background: #475569;
+    transform: translateX(-5px);
+}
