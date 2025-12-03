@@ -1,0 +1,57 @@
+/* student.css */
+/* reset simple */
+body {
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    margin: 0;
+    padding: 20px;
+}
+
+.card-room {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card-room h3 {
+    margin: 0 0 10px 0;
+}
+
+.card-room p {
+    margin: 0 0 10px 0;
+}
+
+.card-room a.button {
+    background: #27ae60;
+    color: #fff;
+    padding: 8px 12px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.card-room a.button:hover {
+    background: #219150;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.schedule-table th, .schedule-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+.schedule-table th {
+    background: #2ecc71;
+    color: #fff;
+}
+
+.schedule-table tr:nth-child(even) {
+    background: #f9f9f9;
+}

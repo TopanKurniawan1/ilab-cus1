@@ -1,0 +1,546 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Sidebar container */
+
+/* Judul */
+.sidebar-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* Menu */
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Menu item */
+.sidebar-menu li {
+    margin-bottom: 12px;
+}
+
+/* Link navigasi */
+
+
+
+
+
+
+
+
+/* Hover */
+.sidebar-menu a:hover {
+    background: #c9add8; /* hover ungu lembut */
+    color: #fff;
+    transform: translateX(4px);
+}
+
+
+
+
+
+
+.admin-sidebar {
+    color: #2d1b3d;
+}
+
+.sidebar-title {
+    color: #4a235a;
+}
+
+.sidebar-menu a {
+    color: #2d1b3d;
+}
+
+.sidebar-menu a:hover {
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+/* Garis bawah */
+.admin-sidebar hr {
+    margin-top: 20px;
+    border-color: rgba(255,255,255,0.3);
+}
+/* Container umum */
+.dashboard-container {
+    padding: 20px;
+}
+
+/* Header */
+.dashboard-header h2 {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.dashboard-header p {
+    color: #475569;
+    font-size: 15px;
+}
+
+/* Statistik */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+
+
+.stat-card h3 {
+    font-size: 32px;
+    margin: 0;
+}
+
+.stat-card p {
+    margin: 0;
+    font-size: 14px;
+    color: #000000;
+}
+
+.stat-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+/* Menu */
+.menu-title {
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+/* Grid card menu */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+/* Card menu */
+.menu-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px 10px;
+    text-align: center;
+    text-decoration: none;
+    color: #1e293b;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    transition: 0.25s;
+}
+
+.menu-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+}
+
+/* Ikon menu */
+.menu-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+
+.logout-btn {
+    background: #01acfc;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.2s;
+    display: inline-block;
+}
+
+/* Hover */
+.logout-btn:hover {
+    background: #1c00b9;
+}
+/* Judul Halaman */
+.page-title {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+/* Tombol tambah */
+.btn-primary {
+    background: #b2caff;
+    color: white;
+    padding: 10px 16px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+.btn-primary:hover {
+    background: #1e3a8a;
+}
+
+/* Tabel modern */
+.table-modern {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+
+.table-modern th,
+.table-modern td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.table-modern tbody tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+.table-modern tbody tr:hover {
+    background: #e2e8f0;
+}
+
+/* Kolom aksi */
+
+/* Tombol Edit */
+
+
+.btn-edit {
+    background: #acccff;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+.btn-edit:hover {
+    background: #1e40af;
+}
+
+/* Tombol Delete */
+.btn-delete {
+    background: #ffc2c2;
+    color: white;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+.btn-delete:hover {
+    background: #b91c1c;
+}
+
+/* Inline form */
+.inline-form {
+    display: inline;
+}
+
+
+/* Wrapper untuk membatasi lebar tabel */
+.table-wrapper {
+    width: 95%;
+    max-width: 1300px;
+    margin: 20px auto;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+
+
+
+.teacher-photo {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 2px solid #e2e8f0;
+    display: block;
+}
+
+.no-photo {
+    color: #64748b;
+    font-size: 13px;
+}
+
+.table-modern td {
+    vertical-align: middle;
+}
+
+
+
+
+/* =========================================================
+   FORM CREATE / EDIT (MODULAR, AMAN)
+   Tidak mempengaruhi tabel, tombol, sidebar, atau layout lain
+========================================================= */
+
+.form-create {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 25px 30px;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.form-create h2 {
+    margin-bottom: 20px;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.form-create .fc-group {
+    margin-bottom: 18px;
+}
+
+.form-create .fc-group label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 6px;
+    color: #1e293b;
+}
+
+.form-create .fc-input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+.form-create .fc-input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+    outline: none;
+}
+
+.form-create .fc-submit {
+    background: #2563eb;
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.form-create .fc-submit:hover {
+    background: #1e3a8a;
+}
+
+/* Select Style untuk Form Create */
+.fc-select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 15px;
+    background: white;
+    transition: 0.2s ease;
+}
+
+.fc-select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+    outline: none;
+}
+
+
+/* =========================================================
+   FORM EDIT (MODULAR & AMAN)
+========================================================= */
+
+.form-edit {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 25px 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.form-edit h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.fe-group {
+    margin-bottom: 18px;
+}
+
+.fe-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.fe-input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: 0.2s ease;
+}
+
+.fe-input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+    outline: none;
+}
+
+.fe-submit {
+    background: #2563eb;
+    color: #fff;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.fe-submit:hover {
+    background: #1e3a8a;
+}
+
+
+.form-edit {
+    max-width: 700px;
+    margin: 30px auto;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.form-edit h2 {
+    margin-bottom: 20px;
+    color: #1e293b;
+}
+
+.fe-group {
+    margin-bottom: 18px;
+}
+
+.fe-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.fe-input,
+.fe-select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 15px;
+    background: #fff;
+    transition: 0.2s;
+}
+
+.fe-input:focus,
+.fe-select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+    outline: none;
+}
+
+.fe-submit {
+    background: #2563eb;
+    color: #fff;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.fe-submit:hover {
+    background: #1e3a8a;
+}
+
+
+.teacher-photo-preview {
+    width: 80px;
+    height: 80px;
+    border-radius: 6px;
+    object-fit: cover;
+    border: 2px solid #e2e8f0;
+}
+
+
+/* kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk */
+.sidebar-menu a {
+    display: block;
+    padding: 10px 14px;
+    background: #ffffff;         /* sedikit lebih terang */
+    color: #000000;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: 0.25s ease;
+}
+
+
+.admin-sidebar {
+    position: fixed;      /* Sidebar tidak bergerak saat scroll */
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 100vh;        /* Tinggi penuh layar */
+    background: #9dc2fa;
+    padding: 20px;
+    color: white;
+    box-shadow: 3px 0 10px rgba(0,0,0,0.2);
+
+    overflow-y: auto;     /* Jika menu banyak tetap bisa scroll */
+}
+
+
+.table-modern thead {
+    background: #9dc2fa;
+    color: rgb(0, 0, 0);
+}
+
+
+.stat-card {
+    background: #9dc2fa;
+    color: rgb(0, 0, 0);
+    padding: 18px;
+    border-radius: 12px;
+    text-align: center;
+    transition: 0.25s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
